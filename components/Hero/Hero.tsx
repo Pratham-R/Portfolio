@@ -41,7 +41,7 @@ export default function Hero() {
                 <div className="flex items-start w-full md:items-center flex-none flex-nowrap flex-col gap-[10px] h-min justify-center p-0 relative md:w-min overflow-hidden">
                     <div className="aspect-auto flex-none h-auto w-[260px] relative bg-image-bg rounded-lg">
                         <figure className='h-full w-full'>
-                            <Image src={AvatarMe} alt='Avatar' width={300} height={300} className='w-full h-full object-cover' />
+                            <Image src={AvatarMe} alt='Avatar' width={300} height={300} className='w-full h-full object-cover' priority />
                             <AnimatedImageGrid image={AvatarMe} />
                         </figure>
                     </div>

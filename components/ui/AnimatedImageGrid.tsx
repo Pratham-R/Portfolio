@@ -21,8 +21,9 @@ const AnimatedImageGrid: React.FC<AnimatedImageGridProps> = ({ image }) => {
             <Image
                 src={image}
                 alt="Profile image"
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
+                priority
             />
             <div className="absolute inset-0 grid grid-rows-[repeat(10,auto)] grid-cols-[repeat(10,1fr)]">
                 {Array.from({ length: 100 }).map((_, index) => (
