@@ -1,0 +1,142 @@
+"use client"
+import { AvatarMe, handGif } from '@/app/assets/assets'
+import Image from 'next/image'
+import React from 'react'
+import { Mail, Download } from 'lucide-react'
+import Button from '../ui/Button'
+import { motion } from "framer-motion"
+import AnimatedImageGrid from '../ui/AnimatedImageGrid'
+import CounterContainer from '../CounterContainer/CounterContainer'
+
+export default function Hero() {
+    const handleEmailClick = () => {
+        const email = "prathamrastogi5@gmail.com";
+        const subject = "Portfolio Inquiry";
+        const body = "Hi Pratham, I'm reaching out after seeing your portfolio.";
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(mailtoLink, "_blank");
+    };
+
+    const handleDownloadResume = (type: 'ai' | 'swe') => {
+        // Placeholder links
+        const resumeUrls = {
+            ai: 'https://drive.google.com/file/d/1XcDUUUSaLrDP_uombLnE_QjWwWGi7H_8/view?usp=sharing',
+            swe: 'https://drive.google.com/file/d/1fw0sOTSdyGgRXTsCQNhtR4JxjQlEc40R/view?usp=sharing'
+        };
+        window.open(resumeUrls[type], '_blank');
+    };
+
+    const handleGithubClick = () => {
+        window.open('https://github.com/pratham-r', '_blank');
+    };
+
+    const handleLinkedinClick = () => {
+        window.open('https://linkedin.com/in/prathamrastogi', '_blank');
+    };
+
+    return (
+        <div className="flex flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible p-0 relative w-full">
+            {/* top  */}
+            <section className="flex flex-col lg:flex-row items-center flex-none flex-nowrap gap-[20px] h-min justify-start overflow-visible p-0 relative w-full">
+                <div className="flex items-start w-full md:items-center flex-none flex-nowrap flex-col gap-[10px] h-min justify-center p-0 relative md:w-min overflow-hidden">
+                    <div className="aspect-auto flex-none h-auto w-[260px] relative bg-image-bg rounded-lg">
+                        <figure className='h-full w-full'>
+                            <Image src={AvatarMe} alt='Avatar' width={300} height={300} className='w-full h-full object-cover' />
+                            <AnimatedImageGrid image={AvatarMe} />
+                        </figure>
+                    </div>
+                </div>
+                <div className="flex flex-col items-start gap-2 p-0 relative w-full h-auto">
+                    <div className="flex flex-col gap-1">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className="flex items-center gap-1">
+                            <span>
+                                <Image src={handGif} className='waveHand' alt="Hand Gesture" width={25} height={25} />
+                            </span>
+                            <p className="text-light-gray-2 font-bold leading-[1.2em] text-[20px]">Hello, I Am</p>
+                        </motion.div>
+                        <motion.h1
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="text-4xl leading-[1.2em] font-bold text-white">
+                            Pratham Rastogi
+                        </motion.h1>
+                    </div>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.3 }}
+                        viewport={{ once: true }}
+                        className="text-[18px] text-light-gray-2 font-medium leading-[150%] mb-4">
+                        Full-stack engineer who ships. Specialist in Python backend systems, AI agent automation, and multi-LLM routing with experience scaling production systems.
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="flex items-start flex-wrap w-full gap-4 h-min justify-start p-0 relative min-w-[200px]"
+                    >
+                        <Button onClick={handleEmailClick} position='left' icon={<Mail size={18} />} title='Email Me' className="w-auto" />
+                        <div className="flex gap-2 w-full sm:w-auto">
+                            <Button
+                                onClick={() => handleDownloadResume('ai')}
+                                position='left'
+                                icon={<Download size={18} />}
+                                title='AI Resume'
+                                className="w-full text-[13px]"
+                            />
+                            <Button
+                                onClick={() => handleDownloadResume('swe')}
+                                position='left'
+                                icon={<Download size={18} />}
+                                title='SWE Resume'
+                                className="w-full text-[13px]"
+                            />
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.45 }}
+                        viewport={{ once: true }}
+                        className="flex items-center gap-3 mt-2"
+                    >
+                        <button
+                            onClick={handleGithubClick}
+                            className="text-light-gray-2 hover:text-white text-sm font-medium transition-colors underline"
+                        >
+                            Github
+                        </button>
+                        <span className="text-light-gray-2">|</span>
+                        <button
+                            onClick={handleLinkedinClick}
+                            className="text-light-gray-2 hover:text-white text-sm font-medium transition-colors underline"
+                        >
+                            LinkedIn
+                        </button>
+                    </motion.div>
+                </div>
+            </section>
+            {/* middle  */}
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.6 }}
+                viewport={{ once: true }}
+            >
+                {/* bottom  */}
+                <CounterContainer />
+            </motion.div>
+        </div>
+    )
+}
