@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import SectionHeading from './SectionHeading'
-import { flyIcon, aiMagic, mneeCommit, Wanderify, OneStudios } from '@/app/assets/assets'
+import { flyIcon } from '@/app/assets/assets'
 import ProjectCard from './ui/ProjectCard'
 import Link from 'next/link'
 

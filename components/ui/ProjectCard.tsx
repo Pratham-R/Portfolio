@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { linkIcon } from '@/app/assets/assets'
 
 type ProjectItem = {
-    image: StaticImageData;
+    image: StaticImageData | string;
     title: string;
     type: string;
     tech: string;
