@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",
-    "@vercel/analytics": "^1.4.1",
+    "@vercel/analytics": "^1.6.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.0",
     "lucide-react": "^0.473.0",
