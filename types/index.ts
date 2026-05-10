@@ -44,7 +44,7 @@ export interface myStackTypes {
   id: number;
   title: string;
   description: string;
-  logo: string;
+  logo: StaticImageData | string;
   link: string;
 }
 
